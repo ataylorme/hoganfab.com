@@ -56,10 +56,12 @@ function desktop_mobile_classes() {
   }
 }//desktop_mobile_classes
 
-desktop_mobile_classes();
-jQuery(window).resize(function(){
+if ( !jQuery('html').hasClass('old-ie') ) {
   desktop_mobile_classes();
-});
+  jQuery(window).resize(function(){
+    desktop_mobile_classes();
+  });
+}
 
 jQuery(document).ready(function($) {
 
@@ -124,5 +126,13 @@ jQuery(document).ready(function($) {
       }
     });
   });
+  
+  /* IE ALERT */
+  if ( $('html').hasClass('old-ie') ) {
+    $.getScript( "vendors/jquery/ie-alert/2.1/iealert.min.js" ).done(function(){
+      console.log('ie-alert loaded');
+      $("body").iealert();
+    });
+  }
   
 });//end doc ready
