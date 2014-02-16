@@ -1,0 +1,26 @@
+#services{
+    position: relative;
+    padding: 2% 0;
+    background: $Dgreen;
+    color: #FFF;
+    @include respond(mobile){
+	padding-bottom: 30px;
+    }
+    .heading{
+	color: #FFF;
+    }
+    li{
+	.desktop &{
+	    width: 25%;
+	    float: left;
+	}
+	@include respond(landscape){
+	    width: 33%;
+	    float: left;
+	}
+	@include respond(portrait){
+	    width: 50%;
+	    float: left;
+	}
+    }
+}//#services

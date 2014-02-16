@@ -1,0 +1,64 @@
+//MEDIA QUERY MIXIN
+@mixin respond($media) {
+  @if $media == mobile {
+    @media only screen and (max-width: $Mobile) { @content; }
+  }//mobile
+  @else if $media == portrait {
+    @media only screen and (min-width: $Mobile + 1px ) and (max-width: $Landscape - 1px ) { @content; }
+  }//portrait
+  @else if $media == portrait-up {
+    @media only screen and (min-width: $Mobile + 1px ) { @content; }
+  }//portrait-up
+  @else if $media == portrait-down {
+    @media only screen and (max-width: $Landscape - 1px ) { @content; }
+  }//portrait-down
+  @else if $media == landscape {
+    @media only screen and (min-width: $Landscape) and (max-width: $Desktop - 1px ) { @content; }
+  }//landscape
+  @else if $media == landscape-up {
+    @media only screen and (min-width: $Landscape) { @content; }
+  }//landscape-up
+  @else if $media == landscape-down {
+    @media only screen and (max-width: $Landscape) { @content; }
+  }//landscape-down
+  @else if $media == desktop {
+    @media only screen and (min-width: $Desktop) { @content; }
+  }//desktop
+  @else if $media == retina {
+    @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (   min--moz-device-pixel-ratio: 2), only screen and ( -o-min-device-pixel-ratio: 2/1), only screen and ( min-device-pixel-ratio: 2), only screen and ( min-resolution: 192dpi), only screen and ( min-resolution: 2dppx) { @content; }
+  }//retina
+  @else {
+    @content;
+  }//all
+}//respond
+//HTML CLASSES
+@include respond(mobile){
+  .hide-for-mobile{display: none !important;}
+  .show-for-portrait{display: none !important;}
+  .show-for-landscape{display: none !important;}
+  .show-for-desktop{display: none !important;}
+  .portrait-up{display: none !important;}
+  .landscape-up{display: none !important;}
+}//Mobile ( 0 - 320px )
+@include respond(portrait){
+  .show-for-mobile{display: none !important;}
+  .hide-for-portrait{display: none !important;}
+  .show-for-landscape{display: none !important;}
+  .show-for-desktop{display: none !important;}
+  .landscape-up{display: none !important;}
+}//Portrait Tablet ( 321px - 800px )
+@include respond(landscape){
+  .show-for-mobile{display: none !important;}
+  .show-for-portrait{display: none !important;}
+  .hide-for-landscape{display: none !important;}
+  .show-for-desktop{display: none !important;}
+  .portrait-down{display: none !important;}
+}//Landscape Tablet ( 801px - 1024px )
+@include respond(desktop){
+  .show-for-mobile{display: none !important;}
+  .show-for-portrait{display: none !important;}
+  .show-for-landscape{display: none !important;}
+  .hide-for-desktop{display: none !important;}
+  .portrait-down{display: none !important;}
+  .landscape-down{display: none !important;}
+}//Desktop ( 1025px+ )

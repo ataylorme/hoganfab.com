@@ -1,0 +1,131 @@
+//EXTENDABLE CLASSES
+%rounded{@include border-radius(10px);}
+%transition{@include single-transition(all, 0.25s, ease-in-out, 0);}
+%text-shadow{ @include text-shadow(2px 2px 4px rgba(#000000, 0.6));}
+%box-shadow{@include box-shadow(2px 2px 4px rgba(#000, 0.6) );}
+%webfont{font-family: 'Cooper Black';}
+
+//MIXINS
+@mixin clearfix(){zoom:1;&:after{visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;}}
+@mixin flex-iframe(){position: relative;padding-top: 25px;padding-bottom: 67.5%;height: 0;margin-bottom: 16px;overflow: hidden;&.widescreen { padding-bottom: 57.25%; }&.vimeo { padding-top: 0; }iframe,object,embed,video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}}
+@mixin input-placeholder {&.placeholder { @content; }&:-moz-placeholder { @content; }&::-moz-placeholder { @content; }&:-ms-input-placeholder { @content; }&::-webkit-input-placeholder { @content; }}
+@mixin flex-iframe {position: relative;padding-top: 25px;padding-bottom: 67.5%;height: 0;margin-bottom: 16px;overflow: hidden;&.widescreen { padding-bottom: 57.25%; }&.vimeo { padding-top: 0; }iframe,object,embed,video {position: absolute;top: 0;left: 0;width: 100%;height: 100%;}}
+@mixin stroke($width, $color) {$width: $width + 0;$shadow: 0 0 0 transparent;$i: 0;$w: 1;@while ($i < $width) {$i: $i + 1;$j: 0;$w: $w + 2;@for $r from 1 through $w {@for $c from 1 through $w {$x: $c - ceil($w / 2);$y: $r - ceil($w / 2);$shadow: #{$shadow}, #{$x}px #{$y}px 0 $color;}}}text-shadow: $shadow;}
+
+//GLOBAL STYLES
+body{
+    position: relative;
+    font-family: 'Oswald', sans-serif;
+    font-size: 16px;
+    background: #FFF;
+    color: $Dgray;
+    *{@include box-sizing('border-box');}
+    &:after{
+        display: none;
+        @include respond(mobile){content: "mobile";}
+        @include respond(portrait){content: "portrait";}
+        @include respond(landscape){content: "landscape";}
+        @include respond(desktop){content: "desktop";}
+    }//&:after
+}//body
+#wrap{
+    position: relative;
+    @include clearfix;
+}
+.inner{
+    position: relative;
+    @include clearfix;
+    margin: 0 auto;
+    max-width: $Desktop;
+    @include respond(landscape-down){
+        max-width: none;
+        padding: 0 10px;
+    }//mobile
+}//.inner
+.bold, strong{font-weight: bold;}
+.clear{clear: both;}
+.left{float: left;}
+.right{float: right;}
+a{
+    @include link-colors($Dgreen);
+    @include hover-link;
+}//a
+ul, ol {
+    margin: 15px 0;
+    padding: 0 0 0 1.5em;
+}
+ul{
+    list-style: disc;
+}
+ol{
+    list-style: decimal;
+}
+li{
+    margin-bottom: 15px;
+}
+h1,h2,h3,h4,h5,h6, ul, ol{
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+p{
+    line-height: 1.75em;
+    padding-bottom: 10px;
+}
+.heading, h1{
+    font-size: 3.75em;
+    color: $Dgreen;
+    @extend %text-shadow;
+    margin-bottom: 10px;
+    @include respond(landscape){
+        font-size: 3.25em;
+    }
+    @include respond(portrait){
+        font-size: 2.75em;
+    }
+    @include respond(mobile){
+        font-size: 2em;
+    }
+}
+.section{
+    padding: 15px 10px;
+}
+.title, h3{
+    font-size: 2.75em;
+    color: $Dblue;
+    @extend %text-shadow;
+    margin-bottom: 10px;
+    @include respond(landscape){
+        font-size: 2.25em;
+    }
+    @include respond(portrait){
+        font-size: 1.75em;
+    }
+    @include respond(mobile){
+        font-size: 1.5em;
+    }
+}
+.description{
+    line-height: 1.75em;
+    font-size: 1.25em;
+    @include respond(landscape){
+        font-size: 1.2em;
+    }
+    @include respond(portrait){
+        font-size: 1.1em;
+    }
+    @include respond(mobile){
+        font-size: 1em;
+    }
+}
+.to-the-top{
+    display: block;
+    background: $Dgray;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none !important;
+    color: #FFF;
+    @extend %text-shadow;
+    .text{
+        padding: 0 5px;
+    }
+}//to-the-top

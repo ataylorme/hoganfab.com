@@ -1,0 +1,34 @@
+//IMPORT COMPASS
+@import "compass";
+
+//IMPORT FONTS
+@import "_fonts.scss";
+
+//RESETS
+@include global-reset;
+@include reset-html5;
+
+//BREAKPOINTS
+$Mobile: 480px;
+$Landscape: 801px;
+$Desktop: 1025px;
+
+//COLORS
+$Dgreen: #009900;
+$Lgreen: #1ce819;
+$Dgray: #333;
+$Lgray: #e3e3e3;
+$Dblue: #005388;
+
+//IMPORTS
+@import
+"_media-queries.scss",
+"_global.scss",
+"_menu.scss",
+"_header.scss",
+"_about.scss",
+"_services.scss",
+"_featured.scss",
+"_contact.scss",
+"_location.scss",
+"_footer.scss";

@@ -1,0 +1,136 @@
+nav#menu{
+    position: fixed;
+    top: 0;
+    left: 0;
+    @include clearfix;
+    width: 100%;
+    z-index: 999;
+    background: #FFF;
+    font-size: 24px;
+    padding-bottom: 25px;
+    .links{
+	margin-top: -100%;
+	@extend %transition;
+	a{
+	    position: relative;
+	    display: block;
+	    @include clearfix;
+	    @extend %transition;
+	    margin: 5px auto;
+	    padding: 10px;
+	    text-align: center;
+	    text-decoration: none;
+	    float: left;
+	    width: 33.33333%;
+	    .desktop &{
+		width: 16%;
+		margin-left: .33333335%;
+		margin-right: .33333335%;
+	    }
+	    @include respond(portrait-down){
+		background: $Dgray;
+		padding: 5px;
+		.text{
+		    color: #FFF;
+		}
+	    }
+	    @include respond(portrait){
+		width: 30%;
+		margin: 5px 1.5015%;
+	    }
+	    @include respond(mobile){
+		width: 47%;
+		margin: 5px 1.5%;
+	    }
+	    &:hover{
+		background: $Dgreen;
+		.text{
+		    color: #FFF;
+		}
+	    }
+	    &.active{
+		background: $Dblue;
+		.text{
+		    color: #FFF;
+		}
+	    }
+	}//a
+    }//.links
+    .wrap{
+	position: relative;
+	@extend %transition;
+	@include clearfix;
+	color: $Dgray;
+	padding: 10px;
+	padding-left: 54px;
+	@include respond(portrait-down){
+	    padding-left: 0;
+	}
+	@include respond(mobile){
+	    font-size: 20px;
+	}
+    }//.wrap
+    .icon{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 44px;
+	height: 44px;
+	background: $Dgray;
+	color: #FFF;
+	@extend %transition;
+	@include respond(landscape){
+	    float: none;
+	    display: inline-block;
+	}
+	@include respond(portrait-down){
+	    display: none;
+	}
+	i{
+	    position: absolute;
+	    top: 10px;
+	    left: 10px;
+	}
+    }
+    .nav-toggle{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 25px;
+	padding: 5px 0;
+	font-size: 15px;
+	line-height: 1em;
+	text-decoration: none;
+	color: #FFF;
+	background: $Dgray;
+	text-align: center;
+	.open, .close{
+	    position: absolute;
+	    left: 0;
+	    top: 5px;
+	    width: 100%;
+	    text-align: center;
+	}
+	.text{
+	    padding: 0 5px;
+	}
+	.close{
+	    z-index: -1;
+	}
+    }
+    .nav-active &{
+	.links{
+	    margin-top: 0;
+	}
+	.nav-toggle{
+	    background: $Dgreen;
+	    .open{
+		z-index: -1;
+	    }
+	    .close{
+		z-index: 1;
+	    }
+	}
+    }//.nav-active
+}//nav#menu

@@ -1,0 +1,36 @@
+#location{
+    position: relative;
+    padding: 2% 0;
+    background-image: image-url('portland-or-at-night.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 0;
+    .address{
+	display: block;
+	padding: 10px 0;
+	line-height: 1.5em;
+	text-decoration: none;
+	font-size: 2.75em;
+	color: #FFF;
+	@extend %text-shadow;
+	@include respond(landscape){
+	    font-size: 2.25em;
+	}
+	@include respond(portrait){
+	    font-size: 1.75em;
+	}
+	@include respond(mobile){
+	    padding: 5px;
+	    background: $Dgreen;
+	    text-align: center;
+	    margin: 10px 0;
+	    font-size: 1.25em;
+	    &:hover{
+		background: $Dgray;
+	    }
+	}
+    }//.address
+    .iframe{
+	@include flex-iframe;
+    }
+}//#location

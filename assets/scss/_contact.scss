@@ -1,0 +1,25 @@
+#contact{
+    position: relative;
+    padding: 2% 0;
+    .phone{
+	padding-top: 10px;
+	@include respond(mobile){
+	    text-align: center;
+	}
+	a{
+	    color: $Dgray;
+	    text-decoration: none;
+	    @extend %transition;
+	    @include respond(mobile){
+		color: #FFF;
+		display: block;
+		padding: 5px;
+		background: $Dgreen;
+		margin-bottom: 5px;
+		&:hover{
+		    background: $Dgray;
+		}
+	    }
+	}
+    }//.phone
+}//#contact
