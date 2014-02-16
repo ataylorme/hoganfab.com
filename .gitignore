@@ -10,3 +10,4 @@ robots.txt
 .DS_Store
 *.komodoproject
 debug_log.txt
+tractum.php
