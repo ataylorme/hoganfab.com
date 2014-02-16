@@ -5,6 +5,15 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 0;
+    @include respond(landscape){
+	background-image: image-url('portland-or-at-night-landscape.png');
+    }
+    @include respond(portrait){
+	background-image: image-url('portland-or-at-night-portrait.png');
+    }
+    @include respond(mobile){
+	background-image: image-url('portland-or-at-night-mobile.png');
+    }
     .address{
 	display: block;
 	padding: 10px 0;

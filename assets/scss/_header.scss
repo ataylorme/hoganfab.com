@@ -6,11 +6,16 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 0;
+    @include respond(landscape){
+	background-image: image-url('portland-or-skyline-dusk-landscape.png');
+    }
     @include respond(portrait){
 	padding: 10% 0;
+	background-image: image-url('portland-or-skyline-dusk-portrait.png');
     }
     @include respond(mobile){
 	padding: 15% 0;
+	background-image: image-url('portland-or-skyline-dusk-mobile.png');
     }
     .bg{
 	background: rgba(#000, 0.5);

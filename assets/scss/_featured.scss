@@ -5,6 +5,15 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 0;
+    @include respond(landscape){
+	background-image: image-url('st-johns-bridge-portland-or-landscape.png');
+    }
+    @include respond(portrait){
+	background-image: image-url('st-johns-bridge-portland-or-portrait.png');
+    }
+    @include respond(mobile){
+	background-image: image-url('st-johns-bridge-portland-or-mobile.png');
+    }
     .bg{
 	background: rgba(#000, 0.55);
 	position: absolute;
