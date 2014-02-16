@@ -78,32 +78,34 @@ jQuery(document).ready(function($) {
     //load placeholder support script and initialize
     $.getScript( "vendors/jquery/placeholder/2.0.7/jquery.placeholder.min.js" ).done(function(){$('input, textarea').placeholder();});
   }
-    
+  
   /* STELLAR PARRALAX */
-  $.getScript( "vendors/jquery/stellar/0.6.2/stellar.min.js" ).done(function(){
-    console.log('stellar loaded');
-    $.stellar({
-      // Set scrolling to be in either one or both directions
-      horizontalScrolling: false,
-      verticalScrolling: true,
-    
-      // Set the global alignment offsets
-      horizontalOffset: 0,
-      verticalOffset: 0,
-    
-      // Refreshes parallax content on window load and resize
-      responsive: true,
-    
-      // Select which property is used to position elements.
-      // Choose between 'position' or 'transform',
-      // or write your own 'positionProperty' plugin.
-      positionProperty: 'transform',
-    
-      // Enable or disable the two types of parallax
-      parallaxBackgrounds: true,
-      parallaxElements: false,
+  if ( $('body').hasClass('desktop') ) {
+    $.getScript( "vendors/jquery/stellar/0.6.2/stellar.min.js" ).done(function(){
+      console.log('stellar loaded');
+      $.stellar({
+	// Set scrolling to be in either one or both directions
+	horizontalScrolling: false,
+	verticalScrolling: true,
+      
+	// Set the global alignment offsets
+	horizontalOffset: 0,
+	verticalOffset: 0,
+      
+	// Refreshes parallax content on window load and resize
+	responsive: true,
+      
+	// Select which property is used to position elements.
+	// Choose between 'position' or 'transform',
+	// or write your own 'positionProperty' plugin.
+	positionProperty: 'transform',
+      
+	// Enable or disable the two types of parallax
+	parallaxBackgrounds: true,
+	parallaxElements: false,
+      });
     });
-  });
+  }
   
   /* SMOOTH ANCHOR SCROLLING */
   $(function() {
