@@ -127,12 +127,4 @@ jQuery(document).ready(function($) {
     });
   });
   
-  /* IE ALERT */
-  if ( $('html').hasClass('old-ie') ) {
-    $.getScript( "vendors/jquery/ie-alert/2.1/iealert.min.js" ).done(function(){
-      console.log('ie-alert loaded');
-      $("body").iealert();
-    });
-  }
-  
 });//end doc ready
