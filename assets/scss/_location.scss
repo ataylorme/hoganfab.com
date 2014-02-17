@@ -5,6 +5,9 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 0;
+    @include respond(landscape-down){
+	background-attachment: inherit;
+    }
     @include respond(landscape){
 	background-image: image-url('portland-or-at-night-landscape.png');
     }
