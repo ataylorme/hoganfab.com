@@ -5,17 +5,14 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 0;
-    @include respond(landscape-down){
-	background-attachment: inherit;
-    }
     @include respond(landscape){
-	background-image: image-url('st-johns-bridge-portland-or-landscape.png');
+	background: image-url('st-johns-bridge-portland-or-landscape.png') 0 50% no-repeat;
     }
     @include respond(portrait){
-	background-image: image-url('st-johns-bridge-portland-or-portrait.png');
+	background: image-url('st-johns-bridge-portland-or-portrait.png') 0 50% no-repeat;
     }
     @include respond(mobile){
-	background-image: image-url('st-johns-bridge-portland-or-mobile.png');
+	background: image-url('st-johns-bridge-portland-or-mobile.png') 0 50% no-repeat;
     }
     .bg{
 	background: rgba(#000, 0.55);

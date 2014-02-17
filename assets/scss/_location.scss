@@ -5,17 +5,14 @@
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: 50% 0;
-    @include respond(landscape-down){
-	background-attachment: inherit;
-    }
     @include respond(landscape){
-	background-image: image-url('portland-or-at-night-landscape.png');
+	background: image-url('portland-or-at-night-landscape.png') 0 50% no-repeat;
     }
     @include respond(portrait){
-	background-image: image-url('portland-or-at-night-portrait.png');
+	background: image-url('portland-or-at-night-portrait.png') 0 50% no-repeat;
     }
     @include respond(mobile){
-	background-image: image-url('portland-or-at-night-mobile.png');
+	background: image-url('portland-or-at-night-mobile.png') 0 50% no-repeat;
     }
     .address{
 	display: block;

@@ -7,15 +7,15 @@
     background-attachment: fixed;
     background-position: 50% 0;
     @include respond(landscape){
-	background-image: image-url('portland-or-skyline-dusk-landscape.png');
+	background: image-url('portland-or-skyline-dusk-landscape.png') 0 50% no-repeat;
     }
     @include respond(portrait){
 	padding: 10% 0;
-	background-image: image-url('portland-or-skyline-dusk-portrait.png');
+	background-image: image-url('portland-or-skyline-dusk-portrait.png') 0 50% no-repeat;
     }
     @include respond(mobile){
 	padding: 15% 0;
-	background-image: image-url('portland-or-skyline-dusk-mobile.png');
+	background: image-url('portland-or-skyline-dusk-mobile.png') 0 50% no-repeat;
     }
     .bg{
 	background: rgba(#000, 0.5);
