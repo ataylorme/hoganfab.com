@@ -1,5 +1,5 @@
 #hoganfab.com
-##2014 Responsive Redesign
+##2014 Responsive Build
 ##Author: Andrew Taylor
 
 ###Description
