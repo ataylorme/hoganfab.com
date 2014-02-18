@@ -1,13 +1,8 @@
-.sass-cache
-.DS_STORE
-.htaccess
-error_log
-.ftpquota
-__MACOSX
-robots.txt
-*.log
-*.tar.gz
-.DS_Store
-*.komodoproject
-debug_log.txt
-tractum.php
+#Disallow All
+/*
+#Allow index.html
+!index.html
+!config.rb
+!vendors/
+!README.md
+!assets/
